@@ -1,6 +1,17 @@
 .body_bg{
     background-color: #222D32;
 }
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 .panel .panel-title{
     height: 40px;
     line-height: 40px;
@@ -9,4 +20,87 @@
 }
 .mt_150{
     margin-top: 150px;
+}
+/*左侧栏*/
+.lt-aside{
+    width: 180px;
+    height: 100%;
+    background-color: #222D32;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+}
+.lt-aside .brand{
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    background-color: #367FA9;
+    text-align: center;
+}
+.lt-aside .brand a {
+    color: white;
+}
+.lt-aside .user img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
+.lt-aside .user p{
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+}
+.lt-aside .user {
+    padding-top: 30px;
+}
+.lt-aside .nav ul li a{
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    color: white;
+    padding-left: 40px;
+    border-left: 3px solid transparent;
+}
+
+.lt-aside .nav ul li a i{
+    margin-right: 5px;
+}
+.lt-aside .nav a.current {
+    background-color: #1D1F21;
+    border-left: 3px solid #006699;
+}
+.lt-aside .nav .child a {
+    padding-left: 60px;
+}
+/*头部*/
+.lt-topbar{
+    height: 50px;
+    width: 100%;
+    background-color: #3C8DBC;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-left: 180px;
+}
+.lt-topbar a{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+}
+.lt-main {
+    height: 1000px;
+    width: 100%;
+    padding-left: 180px;
+    padding-top: 50px;
+}
+.breadcrumb{
+    margin-top: 20px;
 }
