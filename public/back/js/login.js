@@ -19,17 +19,21 @@ $(function () {
                     notEmpty: {
                         message: '用户名不能为空'
                     },
+                    callback:{
+                        message: '用户名不存在'
+                    },
                     //长度校验
                     stringLength: {
-                        min: 6,
-                        max: 30,
-                        message: '用户名长度必须在6到30之间'
+                        min: 2,
+                        max: 15,
+                        message: '用户名长度必须在2到15之间'
                     },
                     //正则校验
                     regexp: {
                         regexp: /^[a-zA-Z0-9_\.]+$/,
                         message: '用户名由数字字母下划线和.组成'
                     }
+
                 }
             },
             password: {
@@ -38,11 +42,14 @@ $(function () {
                     notEmpty: {
                         message: '密码不能为空'
                     },
+                    callback:{
+                        message: '密码错误'
+                    },
                     //长度校验
                     stringLength: {
                         min: 6,
-                        max: 30,
-                        message: '密码长度必须在6到30之间'
+                        max: 12,
+                        message: '密码长度必须在6到12之间'
                     },
                     //正则校验
                     // regexp: {
@@ -54,4 +61,33 @@ $(function () {
         }
 
     });
+
+
+    $("#form").on('success.form.bv', function (e) {
+        e.preventDefault();
+        //使用ajax提交逻辑
+        $.ajax({
+           type:"post",
+           url:"/employee/employeeLogin",
+            data:$('#form').serialize(),
+            success:function (info) {
+                console.log(info)
+                if(info.success){
+                    location.href="index.html"
+                }
+                if(info.error===1000){
+
+                    $("#form").data('bootstrapValidator').updateStatus("username", "INVALID", "callback");
+                }
+                if(info.error===1001){
+                    $("#form").data('bootstrapValidator').updateStatus("password", "INVALID", "callback");
+                }
+            }
+        })
+    });
+$('[type="reset"]').click(function(){
+    $("#form").data('bootstrapValidator').resetForm();
+})
+
+
 })
