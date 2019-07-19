@@ -10,6 +10,10 @@ a:active {
 .red {
     color: #A94442;
 }
+* {
+    margin: 0;
+    padding: 0;
+}
 ul {
     list-style: none;
     margin: 0;
@@ -23,6 +27,10 @@ ul {
 }
 .mt_150{
     margin-top: 150px;
+}
+
+.mb_20{
+    margin-bottom: 20px;
 }
 /*左侧栏*/
 .lt-aside{
@@ -49,6 +57,11 @@ ul {
 .lt-aside .brand a {
     color: white;
 }
+.lt-aside .user {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    
+}
 .lt-aside .user img{
     width: 80px;
     height: 80px;
@@ -63,9 +76,7 @@ ul {
     font-size: 18px;
     color: white;
 }
-.lt-aside .user {
-    padding-top: 30px;
-}
+
 .lt-aside .nav ul li a{
     height: 40px;
     line-height: 40px;
@@ -120,4 +131,10 @@ ul {
 
 .breadcrumb{
     margin-top: 20px;
+}
+
+.echart-1,
+.echart-2 {
+    width: 48%;
+    height: 400px;
 }
