@@ -46,7 +46,25 @@
 
             <li class="active">用户管理</li>
         </ol>
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>用户名</th>
+                <th>手机号</th>
+                <th>状态</th>
+                <th>操作</th>
+
+
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
     </div>
+
+
 </div>
 
 <!--模态框-->
@@ -67,13 +85,32 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-
+<!--模板引擎-->
+<script type="text/html" id="tpl">
+    {{each rows v i}}
+    <tr>
+        <td width="10%">{{i+1}}</td>
+        <td width="20%">{{v.username}}</td>
+        <td width="30%">{{v.mobile}}</td>
+        <td width="20%">{{v.isDelete === 1 ? "正常":"禁用"}}</td>
+       {{if v.isDelete === 1 }}
+        <td width="20%"><button class="btn btn-danger">禁用</button></td>
+        {{/if}}
+        {{if v.isDelete === 0}}
+        <td width="20%"><button class="btn btn-success">启用</button></td>
+         {{/if}}
+    {{/each}}
+    </tr>
+</script>
 <script src="./lib/jquery/jquery.min.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="./lib/nprogress/nprogress.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
 <script src="./js/common.js"></script>
 <script src="./js/index.js"></script>
+<script src="./js/user.js"></script>
+
 
 
 </body>

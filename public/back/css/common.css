@@ -7,6 +7,11 @@ a:hover,
 a:active {
     text-decoration: none;
 }
+.table.table-bordered th,
+.table.table-bordered td {
+    text-align: center;
+    vertical-align: middle;
+}
 .red {
     color: #A94442;
 }
@@ -137,4 +142,8 @@ ul {
 .echart-2 {
     width: 48%;
     height: 400px;
+}
+
+lt-main .table {
+
 }
