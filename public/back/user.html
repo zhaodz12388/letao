@@ -62,7 +62,13 @@
 
             </tbody>
         </table>
+<!--        分页-->
+        <div class="text-right">
+            <ul id="paginator"></ul>
+        </div>
+
     </div>
+
 
 
 </div>
@@ -89,7 +95,7 @@
 <script type="text/html" id="tpl">
     {{each rows v i}}
     <tr>
-        <td width="10%">{{i+1}}</td>
+        <td width="10%">{{i+1+(page-1)*size}}</td>
         <td width="20%">{{v.username}}</td>
         <td width="30%">{{v.mobile}}</td>
         <td width="20%">{{v.isDelete === 1 ? "正常":"禁用"}}</td>
@@ -107,6 +113,8 @@
 <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="./lib/nprogress/nprogress.js"></script>
 <script src="./lib/artTemplate/template-web.js"></script>
+<script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+
 <script src="./js/common.js"></script>
 <script src="./js/index.js"></script>
 <script src="./js/user.js"></script>
