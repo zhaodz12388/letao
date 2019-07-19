@@ -1,6 +1,8 @@
 $(function(){
     var currentPage=3;
     var pageSize=5
+    var currentId
+    var isDelete
     render()
     function render(){
         // 用户数据{
@@ -33,6 +35,35 @@ $(function(){
 
     }
 
+    $("tbody").on("click",".btn",function(){
+       $("#userModal").modal("show");
+         currentId= $(this).parent().attr("data-id")
+        isDelete=$(this).hasClass("btn-danger")? 0:1;
+
+    })
+    
+    $("#userBtn").click(function () {
+        console.log(currentId)
+        console.log(isDelete)
+        $.ajax({
+            type:"post",
+            url:"/user/updateUser",
+            data:{
+               id: currentId,
+                isDelete:isDelete
+            },
+            dataType:"json",
+            success:function (info) {
+                console.log(info)
+                if(info.success){
+                    $("#userModal").modal("hide");
+                    render()
+                }
+
+            }
+        })
+
+    })
 
 
 })
