@@ -8,6 +8,7 @@
     position: relative;
     overflow: hidden;
     height: 100%;
+
 }
 
 .lt-main .cate-left li a{
@@ -38,4 +39,7 @@
 }
 .lt-main .cate-right li p{
     text-align: center;
+}
+.lt-main .cate-right ul{
+    padding: 20px;
 }

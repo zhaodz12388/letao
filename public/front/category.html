@@ -25,60 +25,8 @@
         <div class="mui-scroll">
             <!--这里放置真实显示的DOM内容-->
     <ul>
-        <li>
-            <a href="#">运动馆</a>
-        </li>
-        <li>
-            <a href="#" class="current">运动馆</a>
-        </li>
-        <li>
-            <a href="#">运动馆</a>
-        </li>
-        <li>
-            <a href="#">运动馆</a>
-        </li>
-        <li>
-            <a href="#">运动馆</a>
-        </li>
-        <li>
-            <a href="#">运动馆</a>
-        </li>
-        <li>
-            <a href="#">运动馆</a>
-        </li>
-        <li>
-            <a href="#">运动馆</a>
-        </li>
-        <li>
-            <a href="#">运动馆</a>
-        </li>
-        <li>
-            <a href="#">运动馆</a>
-        </li>
-        <li>
-            <a href="#">运动馆</a>
-        </li>
-        <li>
-            <a href="#">运动馆</a>
-        </li>
-        <li>
-            <a href="#">运动馆</a>
-        </li>
-        <li>
-            <a href="#">运动馆</a>
-        </li>
-        <li>
-            <a href="#">运动馆</a>
-        </li>
-        <li>
-            <a href="#">运动馆</a>
-        </li>
-        <li>
-            <a href="#">运动馆</a>
-        </li>
-        <li>
-            <a href="#">运动馆</a>
-        </li>
+
+
 
     </ul>
 
@@ -96,102 +44,7 @@
                        <p>耐克</p>
                    </a>
                </li>
-               <li>
-                   <a href="#">
-                       <img src="./images/brand1.png" alt="">
-                       <p>耐克</p>
-                   </a>
-               </li>
-               <li>
-                   <a href="#">
-                       <img src="./images/brand1.png" alt="">
-                       <p>耐克</p>
-                   </a>
-               </li>
-               <li>
-                   <a href="#">
-                       <img src="./images/brand1.png" alt="">
-                       <p>耐克</p>
-                   </a>
-               </li>
-               <li>
-                   <a href="#">
-                       <img src="./images/brand1.png" alt="">
-                       <p>耐克</p>
-                   </a>
-               </li>
-               <li>
-                   <a href="#">
-                       <img src="./images/brand1.png" alt="">
-                       <p>耐克</p>
-                   </a>
-               </li>
-               <li>
-                   <a href="#">
-                       <img src="./images/brand1.png" alt="">
-                       <p>耐克</p>
-                   </a>
-               </li>
-               <li>
-                   <a href="#">
-                       <img src="./images/brand1.png" alt="">
-                       <p>耐克</p>
-                   </a>
-               </li>
-               <li>
-                   <a href="#">
-                       <img src="./images/brand1.png" alt="">
-                       <p>耐克</p>
-                   </a>
-               </li>
-               <li>
-                   <a href="#">
-                       <img src="./images/brand1.png" alt="">
-                       <p>耐克</p>
-                   </a>
-               </li>
-               <li>
-                   <a href="#">
-                       <img src="./images/brand1.png" alt="">
-                       <p>耐克</p>
-                   </a>
-               </li>
-               <li>
-                   <a href="#">
-                       <img src="./images/brand1.png" alt="">
-                       <p>耐克</p>
-                   </a>
-               </li>
-               <li>
-                   <a href="#">
-                       <img src="./images/brand1.png" alt="">
-                       <p>耐克</p>
-                   </a>
-               </li>
-               <li>
-                   <a href="#">
-                       <img src="./images/brand1.png" alt="">
-                       <p>耐克</p>
-                   </a>
-               </li>
-               <li>
-                   <a href="#">
-                       <img src="./images/brand1.png" alt="">
-                       <p>耐克</p>
-                   </a>
-               </li>
-               <li>
-                   <a href="#">
-                       <img src="./images/brand1.png" alt="">
-                       <p>耐克</p>
-                   </a>
-               </li>
-               <li>
-                   <a href="#">
-                       <img src="./images/brand1.png" alt="">
-                       <p>耐克</p>
-                   </a>
-               </li>
+
 
            </ul>
 
@@ -230,11 +83,38 @@
         </ul>
     </div>
 </div>
+<!--一级分类模板引擎-->
 
+<script type="text/html" id="lefttpl">
+    {{each rows v i}}
+    <li >
+        <a href="#" data-id="{{v.id}}" >{{v.categoryName}}</a>
+    </li>
+    {{/each }}
+</script>
+
+<!--二级分类模板引擎-->
+<script type="text/html" id="righttpl">
+    {{if rows.length===0}}
+    暂时没有二级分类信息了
+    {{/if}}
+    {{each rows v i}}
+    <li>
+        <a href="#">
+            <img src="{{v.brandLogo}}" alt="">
+            <p>{{v.brandName}}</p>
+        </a>
+    </li>
+    {{/each }}
+</script>
 
 <script src="./lib/mui/js/mui.js"></script>
 <script src="./lib/zepto/zepto.min.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
+
 <script src="./js/common.js"></script>
+<script src="./js/category.js"></script>
+
 
 </body>
 </html>
