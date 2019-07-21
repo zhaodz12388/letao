@@ -115,7 +115,7 @@
                         <input type="text" name="num" class="form-control"  placeholder="请输入商品库存" >
                     </div>
                     <div class="form-group">
-                        <input type="text" name="num" class="form-control"  placeholder="请输入商品尺寸" >
+                        <input type="text" name="size" class="form-control"  placeholder="请输入商品尺寸" >
                     </div>
                     <div class="form-group">
                         <input type="text" name="oldPrice" class="form-control"  placeholder="请输入商品原价" >
@@ -131,13 +131,14 @@
                         <input type="file" id="fileupload" multiple name="pic1" data-url="/product/addProductPic" style="display: none">
                     </div>
 
-                    <img src="./images/none.png" alt=""  width="100" id="imgfile">
-                    <img src="./images/none.png" alt=""  width="100" id="imgfile02">
-                    <img src="./images/none.png" alt=""  width="100" id="imgfile03">
 
-                    <div class="form-group">
 
+                    <div class="form-group" id="imgBox">
+
+                        <!-- 作用: 标记当前图片有没有上传满三张 -->
+                        <input type="hidden" name="picStatus">
                     </div>
+
 
 
 
@@ -212,7 +213,6 @@
 <script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script>
 <script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
 <script src="./js/common.js"></script>
-<script src="./js/index.js"></script>
 <script src="./js/product.js"></script>
 
 
