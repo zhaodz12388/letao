@@ -1,0 +1,42 @@
+/*公共样式*/
+.item-box{
+    padding: 10px;
+    border-top: 1px solid #666;
+}
+.lt-price .price{
+    color: red;
+}
+.lt-price .oldPrice{
+   text-decoration: line-through;
+    font-size: 12px;
+    color: #666;
+}
+.lt-size span{
+    width: 25px;
+    height: 25px;
+    border: 1px solid #ccc;
+    line-height: 25px;
+    text-align: center;
+    font-size: 12px;
+    margin:  3px 0;
+    display: inline-block;
+}
+.lt-num .last{
+    color: #666;
+    font-size: 12px;
+}
+.lt-go-cart{
+    position: absolute;
+    left: 0;
+    bottom:0;
+    height: 55px;
+    width: 100%;
+    padding: 10px;
+    background-color: #efeff4;
+    border-top: 1px solid RED;
+
+
+}
+.lt-go-cart a{
+    padding: 5px;
+}

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>乐淘商城</title>
+    <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="./lib/fa/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/product.css">
+
+</head>
+<body>
+<div class="lt-containei">
+    <div class="lt-header">
+        <a href="javascript:history.go(-1)" class="icon-left"><i class="mui-icon mui-icon-back"></i></a>
+        <h3>商品详情</h3>
+        <a href="javascript:location.reload()" class="icon-right"><i class="mui-icon mui-icon-reload"></i></a>
+
+    </div>
+    <div class="lt-main">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <!--这里放置真实显示的DOM内容-->
+                <!--                轮播图-->
+                <div class="mui-slider">
+                    <div class="mui-slider-group mui-slider-loop">
+                        <!--支持循环，需要重复图片节点-->
+                        <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="./images/banner6.png" /></a></div>
+                        <div class="mui-slider-item"><a href="#"><img src="./images/banner1.png" /></a></div>
+                        <div class="mui-slider-item"><a href="#"><img src="./images/banner2.png" /></a></div>
+                        <div class="mui-slider-item"><a href="#"><img src="./images/banner3.png" /></a></div>
+                        <div class="mui-slider-item"><a href="#"><img src="./images/banner4.png" /></a></div>
+                        <div class="mui-slider-item"><a href="#"><img src="./images/banner5.png" /></a></div>
+                        <div class="mui-slider-item"><a href="#"><img src="./images/banner6.png" /></a></div>
+                        <!--支持循环，需要重复图片节点-->
+                        <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="./images/banner1.png" /></a></div>
+                    </div>
+                    <div class="mui-slider-indicator">
+                        <div class="mui-indicator mui-active"></div>
+                        <div class="mui-indicator"></div>
+                        <div class="mui-indicator"></div>
+                        <div class="mui-indicator"></div>
+                        <div class="mui-indicator"></div>
+                        <div class="mui-indicator"></div>
+                    </div>
+
+                </div>
+<!--                产品标题-->
+                <div class="lt-pro-name item-box">
+                    <strong>沙发</strong>
+                </div>
+<!--                价格模块-->
+                <div class="lt-price item-box ">
+                    <span>价格:</span>
+                    <span class="price">￥9.8</span>
+                    <span class="oldPrice">￥9.8</span>
+                </div>
+<!--                    尺码模块-->
+                    <div class="lt-size item-box">
+
+                    尺码:
+                        <span>40</span>
+                        <span>40</span>
+                        <span>40</span>
+                        <span>40</span>
+                        <span>40</span>
+                        <span>40</span>
+                        <span>40</span>
+                        <span>40</span>
+                        <span>40</span>
+                        <span>40</span>
+                    </div>
+<!--                库存模块-->
+                <div class="lt-num item-box">
+                    <span>数量：</span>
+                    <div class="mui-numbox" data-numbox-step='1' data-numbox-min='1' data-numbox-max='20'>
+                        <!-- "-"按钮，点击可减小当前数值 -->
+                        <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                        <input class="mui-numbox-input" type="number" />
+                        <!-- "+"按钮，点击可增大当前数值 -->
+                        <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                    </div>
+                    <span class="last">剩余数量：666双</span>
+                </div>
+<!--                商品描述-->
+                <div class="lt-desc item-box">
+                 详情页：好
+                </div>
+                </div>
+            </div>
+        </div>
+    <div class="lt-go-cart">
+        <a href="#" class="mui-pull-left">前往购物车</a>
+        <div class="mui-pull-right">
+            <button class="mui-btn mui-btn-danger">加入购物车</button>
+            <button class="mui-btn mui-btn-warning">买买买</button>
+        </div>
+    </div>
+
+
+    </div>
+</div>
+
+
+
+
+<script src="./lib/mui/js/mui.js"></script>
+<script src="./lib/zepto/zepto.min.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
+
+<script src="./js/common.js"></script>
+<script src="./js/product.js"></script>
+
+
+</body>
+</html>
