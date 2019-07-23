@@ -46,10 +46,12 @@ $(function () {
                 contentover : "释放立即刷新",//可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
                 contentrefresh : "正在刷新...",//可选，正在刷新状态时，下拉刷新控件上显示的标题内容
                 callback :function () {
-                 render(function(info){
-                     console.log(info)
+                    currentPage=1
+                 render(function(info){console.log(info)
                      $(".lt-product").html(template("productTpl",info))
                      mui('.mui-scroll-wrapper').pullRefresh().endPulldownToRefresh();
+                     mui('.mui-scroll-wrapper').pullRefresh().enablePullupToRefresh();
+                     
                  })
                 } //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
             },
@@ -59,7 +61,15 @@ $(function () {
                     render(function(info){
                         console.log(info)
                         $(".lt-product").append(template("productTpl",info))
-                        mui('.mui-scroll-wrapper').pullRefresh().endPullupToRefresh();
+                        if(info.data.length===0){
+                            mui('.mui-scroll-wrapper').pullRefresh().endPullupToRefresh(true);
+                        }
+                        else {
+                            mui('.mui-scroll-wrapper').pullRefresh().endPullupToRefresh(false);
+
+                        }
+
+
                     })
                 } //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
             }
@@ -70,25 +80,25 @@ $(function () {
 
     // 2.点击搜索按钮，渲染产品模块
 
-    // $(".lt-search .search-btn").click(function () {
-    //     var txt=addHistory()
-    //     if(txt===undefined){
-    //         return;
-    //     }
-    //     render()
-    // })
+    $(".lt-search .search-btn").click(function () {
+        var txt=addHistory()
+        if(txt===undefined){
+            return;
+        }
+     mui('.mui-scroll-wrapper').pullRefresh().pulldownLoading()
+    })
 
 
     //3. 添加下拉菜单，高亮显示,并切换箭头指向
-    // $(".lt-sort a[data-type]").click(function () {
-    //     if($(this).hasClass("current")) {
-    //         $(this).find(".lt-sort a i").toggleClass("fa-angle-down").toggleClass("fa-angle-up")
-    //     }
-    //     else{
-    //         $(this).addClass("current").siblings().removeClass("current")
-    //     }
-    //     render()
-    // })
+    $(".lt-sort a[data-type]").on("tap",function () {
+        if($(this).hasClass("current")) {
+            $(this).find(".lt-sort a i").toggleClass("fa-angle-down").toggleClass("fa-angle-up")
+        }
+        else{
+            $(this).addClass("current").siblings().removeClass("current")
+        }
+        mui('.mui-scroll-wrapper').pullRefresh().pulldownLoading()
+    })
 
 
 
