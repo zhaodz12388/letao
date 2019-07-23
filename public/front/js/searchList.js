@@ -7,7 +7,12 @@ $(function () {
 
 
 
+
+
+
     function render(){
+        $(".lt-product").html('<div class="loop"></div>')
+
         key=$(".lt-search input").val()
         var datas={
             proName:key,
@@ -19,19 +24,23 @@ $(function () {
         var sortValue=$(".lt-sort a.current i").hasClass("fa-angle-down")?2:1;
         datas[sortName]=sortValue;
     }
-        $.ajax({
-            type:"get",
-            url:"/product/queryProduct",
-            data:datas,
-            dataType:"json",
-            success:function (info) {
-                console.log(info)
-                $(".lt-product").html(template("productTpl",info))
-            }
-        })
+        setTimeout(function () {
+            $.ajax({
+                type:"get",
+                url:"/product/queryProduct",
+                data:datas,
+                dataType:"json",
+                success:function (info) {
+                    console.log(info)
+                    $(".lt-product").html(template("productTpl",info))
+                }
+            })
+        },1000)
+
 
     }
   // 点击搜索按钮，渲染产品模块
+
     $(".lt-search .search-btn").click(function () {
         var txt=addHistory()
         if(txt===undefined){
