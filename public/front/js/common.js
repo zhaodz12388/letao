@@ -42,7 +42,7 @@ function addHistory() {
 
     var txt=  $(".lt-search input").val().trim()
     if(txt===""){
-        alert("请输入要搜索的商品")
+        mui.toast("请输入搜索关键字",{duration:1500})
         return;
     }
     var arr=getHistory();
@@ -60,3 +60,4 @@ function addHistory() {
     localStorage.setItem("search-list",jsonSty)
     return txt;
 }
+

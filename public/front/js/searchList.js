@@ -25,6 +25,19 @@ $(function () {
   // 点击搜索按钮，渲染产品模块
     $(".lt-search .search-btn").click(function () {
     addHistory()
+        render()
+        // $(".lt-search input").val("")
+    })
+
+
+    // 添加下拉菜单，高亮显示,并切换箭头指向
+    $(".lt-sort a").click(function () {
+        if($(this).hasClass("current")) {
+            $(this).find(".lt-sort a i").toggleClass("fa-angle-down").toggleClass("fa-angle-up")
+        }
+        else{
+            $(this).addClass("current").siblings().removeClass("current")
+        }
     })
 
 })

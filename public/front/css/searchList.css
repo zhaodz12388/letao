@@ -13,3 +13,6 @@
 .lt-sort i{
     margin-left: 3px;
 }
+.lt-sort a.current{
+    color: orange;
+}

@@ -43,7 +43,11 @@ $(function () {
 
 
     $(".lt-search .search-btn").click(function () {
+
         var txt=addHistory()
+        if(txt===undefined){
+            return;
+        }
         render();
        $(".lt-search input").val("")
        location.href="searchList.html?search-list="+txt
