@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取地址栏对象</title>
+</head>
+<body>
+<script>
+    function getSearch(k) {
+        var search=(decodeURI (location.search)).slice(1);
+        var arr=search.split("&")
+
+        var obj={};
+       arr.forEach(function (v,i) {
+        var key =  v.split("=")[0]
+        var value =  v.split("=")[1]
+           obj[key];
+           obj[key]=value;
+        })
+        return  obj[k];
+    }
+</script>
+</body>
+</html>

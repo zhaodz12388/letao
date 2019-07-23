@@ -92,3 +92,73 @@ img{
     width: 100%;
     height: 100%;
 }
+/*搜索框样式*/
+.lt-search input{
+    border: 1px solid #007AFF;
+    border-radius: 5px;
+    height: 34px;
+    font-size: 12px;
+    margin-bottom: 0;
+    padding-right: 60px;
+    overflow: hidden;
+}
+.lt-search{
+    padding: 10px;
+    position: relative;
+
+}
+.lt-search .search-btn{
+    height: 34px;
+    border-radius: 0 5px 5px 0;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+/*产品模块样式*/
+.lt-main .lt-product li{
+    float: left;
+    width: 48%;
+    margin: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+}
+.lt-main .lt-product li:nth-child(odd){
+    margin-right: 4%;
+}
+.lt-main .lt-product{
+    padding: 10px;
+}
+.lt-main .lt-product li .pr{
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+}
+.lt-main .lt-product li .price{
+    color: red;
+}
+.lt-main .lt-product li .oldPrice{
+    color: #ccc;
+    text-decoration: line-through;
+}
+.lt-main .lt-product li .buy{
+    text-align: center;
+    margin: 10px;
+    display: block;
+}
+.lt-main .lt-product li p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    width: 100%;
+    height: 60px;
+
+}
+.lt-main .lt-product li img{
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
