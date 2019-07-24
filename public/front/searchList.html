@@ -78,15 +78,15 @@
     <ul>
         {{each data v i}}
         <li>
-            <a href="product.html">
+
                 <img src="{{v.pic[0].picAddr}}" alt="">
                 <p>{{v.proName}} </p>
                 <div class="pr">
                     <span class="price">￥{{v.price}}</span>
                     <span class=" oldPrice">￥{{v.oldPrice}}</span>
                 </div>
-                <a class="buy"><button class="mui-btn mui-btn-primary">立即购买</button></a>
-            </a>
+                <a href="product.html?productId={{v.id}}" class="buy"><button class="mui-btn mui-btn-primary">立即购买</button></a>
+
         </li>
         {{/each }}
     </ul>

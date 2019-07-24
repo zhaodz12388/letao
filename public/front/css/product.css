@@ -40,3 +40,7 @@
 .lt-go-cart a{
     padding: 5px;
 }
+.lt-main .mui-scroll  img{
+    width: 500px;
+    height: 500px;
+}
