@@ -44,3 +44,7 @@
     width: 500px;
     height: 500px;
 }
+.lt-size span.current{
+    background-color: orange;
+    color: white;
+}

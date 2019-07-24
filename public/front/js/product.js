@@ -24,4 +24,39 @@ $(function(){
         }
     })
 
+    // 2.点击商品尺寸，显示高亮
+    $(".lt-main").on("click",".lt-size span",function () {
+        $(this).addClass("current").siblings().removeClass("current")
+    })
+
+   // 3.点击购物车，获取数据，发送ajax请求
+var size=$(".lt-size span.current").text();
+
+var num=$(".mui-numbox-input").val()
+    $("#addCart").click(function () {
+        if(!size){
+       mui.toast("请选择尺码")
+        }
+        $.ajax({
+            type:"post",
+            url:"/cart/addCart",
+            data:{
+                productId:productId,
+                num:num,
+                size:size,
+            },
+            dataType:"json",
+            success:function (info) {
+                console.log(info)
+                if(info.error===400){
+                    location.href="login.html?url="+location.href;
+                }
+        if(info.success){
+            location.href="cart.html"
+        }
+            }
+        })
+
+    })
+
 })
